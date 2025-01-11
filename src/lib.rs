@@ -73,11 +73,7 @@ mod tests {
             };
             (Just(open), close, Just(ws))
         }).prop_map(|(open, close, ws)| {
-            let mut enclosed = String::new();
-            enclosed.push_str(open.to_str());
-            enclosed.push_str(ws.as_str());
-            enclosed.push_str(close.to_str());
-            enclosed
+            [open.to_str(), words.as_str(), close.to_str()].concat()
         })
     }
 
