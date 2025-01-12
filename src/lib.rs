@@ -155,6 +155,12 @@ mod tests {
         let parsed = SentenceParser::parse(Rule::words, "");
         assert!(parsed.is_err());
     }
+    
+    #[test]
+    fn is_this_a_valid_sentence() {
+        let parsed = SentenceParser::parse(Rule::sentence, ", a, a.");
+        assert!(parsed.is_err());
+    }
 
     proptest!{
         #[test]
