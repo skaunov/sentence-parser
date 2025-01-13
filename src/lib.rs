@@ -236,7 +236,7 @@ mod tests {
         }
 
         #[test]
-        fn rejects_missing_punctuation(s in chunks()) {
+        fn rejects_missing_punctuation(s in valid_sentence()) {
             let parsed = SentenceParser::parse(Rule::sentence, s.as_str());
             prop_assert!(parsed.is_err());
         }
